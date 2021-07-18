@@ -1,9 +1,19 @@
+import react from 'react'
 import {Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap'
 import {withRouter, Link} from 'react-router-dom'
 import {AiOutlineSearch} from 'react-icons/ai'
 // #131921
-const NavBar = () =>{
-        return (
+
+class NavBar extends react.Component {
+    state = { 
+        searchBar:false
+     }
+
+     searchBarChange = () =>{
+         this.setState({searchBar:!this.state.searchBar})
+     }
+    render() { 
+        return ( 
             <Navbar style={{backgroundColor:"#131921", color:"white"}} className="px-4" expand="lg">
                 <Link to="/" className="navbar-brand" href="#">Shopizon</Link>
                 <Navbar.Toggle aria-controls="navbarScroll" style={{backgroundColor:"white",color:"lightpink"}} />
@@ -16,9 +26,10 @@ const NavBar = () =>{
                     <Link href="#action1">Home</Link>
                     <Link href="#action2">BackOffice</Link>
                     </Nav>
-                    <div className="p-1" style={{backgroundColor:"#febd69",borderRadius:"10px",border:"none"}}>
+        
+                    <div onClick={() => this.searchBarChange()} style={{backgroundColor:"#febd69",borderRadius:"10px",border:this.state.searchBar ?"5px solid #febd69": "none"}}>
                     <Form className="d-flex">
-                    <NavDropdown title="All Departments" style={{backgroundColor:"lightgray",color:"rgba(0,0,0,.8)"}} id="navbarScrollingDropdown">
+                    <NavDropdown title="All Departments" style={{backgroundColor:"lightgray",color:"rgb(0,0,0)",fontSize:".8em"}} id="navbarScrollingDropdown">
                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
                         <NavDropdown.Divider />
@@ -33,5 +44,6 @@ const NavBar = () =>{
             </Navbar>
                     )
     }
+}
  
 export default withRouter(NavBar)  ;
