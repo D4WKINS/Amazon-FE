@@ -21,8 +21,10 @@ class  extends Component {
     }
     render() { 
         return ( 
+            <>
+            </>
          );
     }
 }
  
-export default ;
+export default Home
