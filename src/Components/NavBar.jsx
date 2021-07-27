@@ -25,9 +25,9 @@ class NavBar extends react.Component {
                     >
                     <Link href="#action1">Home</Link>
                     <Link href="#action2">BackOffice</Link>
-                    </Nav>
+                    </Nav> 
         
-                    <div onClick={() => this.searchBarChange()} style={{backgroundColor:"#febd69",borderRadius:"10px",border:this.state.searchBar ?"5px solid #febd69": "none"}}>
+                    <div className="ms-md-5" onClick={() => this.searchBarChange()} style={{backgroundColor:"#febd69",borderRadius:"10px",border:this.state.searchBar ?"5px solid #febd69": "none"}}>
                     <Form className="d-flex">
                     <NavDropdown title="All Departments" style={{backgroundColor:"lightgray",color:"rgb(0,0,0)",fontSize:".8em"}} id="navbarScrollingDropdown">
                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
