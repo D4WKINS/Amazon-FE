@@ -15,7 +15,7 @@ class NavBar extends react.Component {
     render() { 
         return ( 
             <Navbar style={{backgroundColor:"#131921", color:"white"}} className="px-4" expand="lg">
-                <Link to="/" className="navbar-brand" href="#">Shopizon</Link>
+                <Link to="/" className="navbar-brand" href="#"><h2>Shopizon</h2></Link>
                 <Navbar.Toggle aria-controls="navbarScroll" style={{backgroundColor:"white",color:"lightpink"}} />
                 <Navbar.Collapse id="navbarScroll" style={{color:"lightpink"}}>
                     <Nav
